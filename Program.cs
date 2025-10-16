@@ -1,7 +1,5 @@
 using DbOperationsWithEFCoreApp.Data;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
-using System.Text.Json.Serialization;
 
 namespace DbOperationsWithEFCoreApp
 {
@@ -16,7 +14,7 @@ namespace DbOperationsWithEFCoreApp
                 options.UseSqlServer(builder.Configuration.GetConnectionString("AppDb")));
 
             builder.Services.AddControllers();
-                
+
             builder.Services.AddEndpointsApiExplorer(); // Swagger dependency
             builder.Services.AddSwaggerGen();           // Swagger dependency
 
@@ -25,9 +23,9 @@ namespace DbOperationsWithEFCoreApp
             // Configure the HTTP request pipeline
             //if (app.Environment.IsDevelopment())
             //{
-                app.UseSwagger();         // Shows swagger.json
-                app.UseSwaggerUI();       // Shows Swagger UI
-          //  }
+            app.UseSwagger();         // Shows swagger.json
+            app.UseSwaggerUI();       // Shows Swagger UI
+                                      //  }
 
             app.UseHttpsRedirection();
             app.UseAuthorization();
